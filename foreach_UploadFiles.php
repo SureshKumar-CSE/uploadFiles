@@ -22,14 +22,16 @@ if(count($_FILES["upload"]["name"]) > 0){
 						//$sql = "INSERT INTO tablename(FILE_NAME, URL) VALUES('$file_name', '$targetPath');";
 						//$result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 					}else {
-						echo "Something is wrong.\n";
+						echo "Something is wrong when uploading the ".$file_name;
 					}
 				}else {
-					echo "File contains invalid extension.\n";
+					echo "File ".$file_name."contains invalid extension.";
 				}
+			}else {
+				echo "Error: Temporary path is empty for ".$key;
 			}
 		}else {
-			echo "Unable to upload files.\n";
+			echo $key."File have not a valid type.";
 		}
 	 }
 }else {
